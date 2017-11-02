@@ -20,3 +20,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/booking/insert','BookingController@book');
+
+Route::get('/booking/adminViewBooking','adminController@index');
+

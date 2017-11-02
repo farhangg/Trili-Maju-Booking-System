@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
-namespace App\Http\Controllers\Auth;
+    use DB;
+    use Auth;
 
 class BookingController extends Controller
 {
@@ -21,7 +21,6 @@ class BookingController extends Controller
         $data = array('username'=>$username,'container20'=>$container20,'container40'=>$container40,'totalcontainer'=>$totalcontainer,'chosendate'=> $chosendate,'status'=>'Accepted for processing');
 
         DB::table('booking')->insert($data);
-
     }
     
 }
