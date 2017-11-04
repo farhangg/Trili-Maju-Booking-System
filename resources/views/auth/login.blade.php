@@ -27,7 +27,8 @@
 									Trili Maju <br> Chartered Train System
 								</h1>
 							</div>
-							<form class="m-login__form m-form" action="">
+							<form class="m-login__form m-form" method="POST" action="{{ route('login') }}">
+							 {{ csrf_field() }}
 								<div class="form-group m-form__group">
 									<input class="form-control m-input"   type="text" placeholder="Email" name="email" autocomplete="off">
 								</div>
@@ -49,7 +50,7 @@
 									</div>
 								</div>
 								<div class="m-login__form-action">
-									<button id="m_login_signin_submit" class="btn m-btn--pill m-btn--air btn-lg btn-outline-metal m-btn m-btn--custom m-login__btn m-login__btn--primary">
+									<button type="submit" class="btn m-btn--pill m-btn--air btn-lg btn-outline-metal m-btn m-btn--custom m-login__btn m-login__btn--primary">
 											Sign In
 									</button>
 								</div>
