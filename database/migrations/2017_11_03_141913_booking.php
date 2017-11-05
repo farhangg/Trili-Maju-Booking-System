@@ -15,9 +15,11 @@ class Booking extends Migration
     {
          Schema::create('booking', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('Username');
+            $table->string('Email');          
             $table->string('CompanyName');
-            $table->string('Container20');
-            $table->string('Container40');
+            $table->integer('Container20');
+            $table->integer('Container40');
             $table->string('TotalContainer');
             $table->string('BookingReference');
             $table->string('Commodity');
