@@ -22,12 +22,14 @@ class BookingController extends Controller
         $VesselName = $request->input('VesselName');   
         $VesselETA = $request->input('VesselETA'); 
         $date = $request->input('chosenDate');
+        $ClosingTime = $request->input('ClosingTime');
         $PickUpDepot = $request->input('PickUpDepot');
         $ContainerNo = $request->input('ContainerNo');
         $Remarks = $request->input('Remarks');
         $totalcontainer = $request->input('containerTotal');
         $chosendate = date("Y/m/d");
 
+//        $ClosingTime = date("H:i:s");
         $created_at = date("Y-m-d H:i:s");
 
         $data = array('Username'=>$Username, 'Email'=>$Email, 'CompanyName'=>$CompanyName,'Container20'=>$Container20,'Container40'=>$Container40, 'BookingReference'=>$BookingReference, 
