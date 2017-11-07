@@ -50,14 +50,14 @@
                             <!--{{ Auth::user()->name }} -->
 
                             <div class="col-md-6">
-                                <input type="number" class="form-control" name="Container20">
+                                <input type="number" class="form-control" name="container20">
                             </div>
                         </div>
   
                        <div style='padding-bottom: 50px;'>
                             <label class="col-md-4 control-label">40-ft Container</label>
                             <div class="col-md-6">
-                                <input type="number" class="form-control" name="Container40">
+                                <input type="number" class="form-control" name="container40">
                             </div>
                         </div>
 
