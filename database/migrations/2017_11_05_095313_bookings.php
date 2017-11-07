@@ -3,8 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
-class Booking extends Migration
+class Bookings extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +12,7 @@ class Booking extends Migration
      */
     public function up()
     {
-         Schema::create('booking', function (Blueprint $table) {
+         Schema::create('bookings', function (Blueprint $table) {
             $table->increments('id');
             $table->string('CompanyName');
             $table->string('Container20');
@@ -41,6 +40,6 @@ class Booking extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('booking');
+        Schema::dropIfExists('bookings');
     }
 }

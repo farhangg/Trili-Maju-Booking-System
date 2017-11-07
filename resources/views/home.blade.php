@@ -50,21 +50,21 @@
                             <!--{{ Auth::user()->name }} -->
 
                             <div class="col-md-6">
-                                <input type="number" class="form-control" name="container20">
+                                <input onkeyup="totalContainer()" onchange="totalContainer()" id="Container20" type="number" class="form-control" name="Container20">
                             </div>
                         </div>
   
                        <div style='padding-bottom: 50px;'>
                             <label class="col-md-4 control-label">40-ft Container</label>
                             <div class="col-md-6">
-                                <input type="number" class="form-control" name="container40">
+                                <input onkeyup="totalContainer()" onchange="totalContainer()" id="Container40" type="number" class="form-control" name="Container40">
                             </div>
                         </div>
 
                         <div style='padding-bottom: 50px;'>
                             <label class="col-md-4 control-label">Total Container</label>
                             <div class="col-md-6">
-
+                             <input readonly id="total" type="number" class="form-control" name="Container40">
                             </div>
                         </div>
 
@@ -147,7 +147,7 @@
                                 <button type="submit" class="btn btn-primary">
                                     Submit
                                 </button> 
-                                <button type="Clear" class="btn btn-primary">
+                                <button type="reset" class="btn btn-primary">
                                     Clear Form
                                 </button> 
                                 <button type="Print" class="btn btn-primary">
@@ -162,4 +162,21 @@
         </div>
     </div>
 </div>
+
+<script>
+   function totalContainer() {
+    var c20 = document.getElementById("Container20").value * 20;
+    var c40 = document.getElementById("Container40").value * 40;
+
+    console.log(c20 + '= 20-Container');
+     console.log(c40 + '= 40-Container');
+
+
+     var s = document.getElementById("total");
+            s.value = c20 + c40;
+}
+
+   
+</script>
+
 @endsection
