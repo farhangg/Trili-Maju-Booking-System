@@ -15,6 +15,19 @@
 @section('content')
 <div class="container">
 
+@foreach ($bookings as $booking)<br>
+<br>
+<br>
+<br>
+
+    <p>booking id {{ $booking->id }}</p>
+
+    <p>Status {{ $booking->Status }}</p>
+
+    <p>Booking Reference {{ $booking->BookingReference}}</p> 
+
+    
+@endforeach
 
 </div>
 @endsection

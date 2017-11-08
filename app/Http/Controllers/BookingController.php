@@ -5,14 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Booking;
-    use DB;
     use Auth;
 
 class BookingController extends Controller
 {
 
     public function book(Request $request){
-
         $booking = new Booking; 
         $booking->CompanyName =$request->input('CompanyName');
         $booking->Container20 =  $request->input("Container20");
