@@ -11,9 +11,6 @@ class adminController extends Controller
       public function index(Request $request)
     {
 
-        $booking = new Booking; 
-        $bookings = $booking::all(); 
-
             $booking = new Booking; 
             $bookings = $booking::all(); 
          
@@ -23,7 +20,4 @@ class adminController extends Controller
             //return view('adminPage.adminview', $bookings);
             //return view('adminPage.adminview', compact('bookings'));
     }
-
-
-    
 }
