@@ -23,3 +23,10 @@ Route::post('/booking/insert','BookingController@book');
 
 Route::get('/booking/adminViewBooking','adminController@index');
 
+//Route::post('/sendmail',function (\Illuminate\Http\Request $request,
+//\Illuminate\Mail\Mailer $mailer){
+//   $mailer
+//        ->to($request->input('mail'))
+//        ->send(new \App\Mail\MyMail($request->input('title')));
+//   return redirect()->back();
+//})->name('sendmail');

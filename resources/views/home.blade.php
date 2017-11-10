@@ -25,9 +25,10 @@
                             {{ session('status') }}
                         </div>
                     @endif
+
                     <div>
                         <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="/booking/insert">
+                    <form id="firstform" class="form-horizontal" method="POST" action="/booking/insert">
                         {{ csrf_field() }}
 
                         <div style='padding-bottom: 50px;'>
@@ -41,6 +42,7 @@
                             <label class="col-md-4 control-label">Booking Reference*</label>
                             <div class="col-md-6">
                                 <input type="text" class="form-control" name="BookingReference">
+                                <input class="form-control" type="hidden" name="mail" value=<?php echo Auth::user()->email; ?>>
                             </div>
                         </div>
 
@@ -71,7 +73,7 @@
                         <div style='padding-bottom: 50px;'>
                             <label class="col-md-4 control-label">Commodity*</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="Commodity">
+                                <input type="text" placeholder="Please Specify e.g: Pallet" class="form-control" name="Commodity">
                             </div>
                         </div>
 
@@ -79,10 +81,31 @@
                             <label class="col-md-4 control-label">Liner*</label>
                             <div class="col-md-6">
                                 <select class="form-control" name="Liner">
-                                   <option value="test">test</option>
-                                   <option value="test">test</option>
-                                  <option value="test">test</option>
-                                  <option value="test">test</option>
+                                   <option value="BENLINE">BENLINE</option>
+                                   <option value="CMA-CGIV">CMA-CGIV</option>
+                                  <option value="COSCO">COSCO</option>
+                                  <option value="GPA/EMC">GPA/EMC</option>
+                                   <option value="HAPAG-LL">HAPAG-LL</option>
+                                   <option value="HEUNG-A">HEUNG-A</option>
+                                  <option value="HMM">HMM</option>
+                                  <option value="IAL">IAL</option>
+                                  <option value="IRISL">IRISL</option>
+                                   <option value="KLINE">KLINE</option>
+                                  <option value="KMTC">KMTC</option>
+                                  <option value="MAERSK">MAERSK</option>
+                                   <option value="MAXICON">MAXICON</option>
+                                   <option value="MITSUI">MITSUI</option>
+                                  <option value="MSC">MSC</option>
+                                  <option value="MTT">MTT</option>
+                                  <option value="NYK">NYK</option>
+                                  <option value="OOCL">OOCL</option>
+                                  <option value="PIL">PIL</option>
+                                  <option value="SHIN YAN">SHIN YAN</option>
+                                   <option value="SINOKOR">SINOKOR</option>
+                                  <option value="KMTC">KMTC</option>
+                                  <option value="TSL">TSL</option>
+                                   <option value="WHAI">WHAI</option>
+                                   <option value="YML">YML</option>
                                 </select>
                             </div>
                         </div>
@@ -109,7 +132,7 @@
                         </div>
 
                          <div style='padding-bottom: 50px;'>
-                            <label class="col-md-4 control-label">Date</label>
+                            <label class="col-md-4 control-label">Train Date</label>
                             <div class="col-md-6">
                                  <input type="date" name="ChosenDate">
                                 <button value="checkAvailability">Check Availability </button>
@@ -156,6 +179,8 @@
                             </div>
                         </div>
                     </form>
+
+                        
                     </div>
                 </div>
             </div>

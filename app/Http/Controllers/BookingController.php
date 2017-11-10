@@ -4,16 +4,22 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Mail\Mailer;
+
 use App\Booking;
     use DB;
     use Auth;
 
+use App\Mail\MyMail;
+
 class BookingController extends Controller
 {
 
-    public function book(Request $request){
+    public function book(Request $request, Mailer $mailer){
 
-        $booking = new Booking; 
+        $booking = new Booking;
+        $booking->Username = Auth::user()->name;
+        $booking->Email = Auth::user()->email;
         $booking->CompanyName =$request->input('CompanyName');
         $booking->Container20 =  $request->input("Container20");
         $booking->Container40 =$request->input("Container40");
@@ -32,7 +38,11 @@ class BookingController extends Controller
 
         $booking->save();
 
-        return ("Booking save into database");
+        $mailer
+        ->to($request->input('mail'))
+        ->send(new \App\Mail\MyMail($request->input('BookingReference')));
+
+        return ("Booking save into database and email has been sent to you");
     }
     
 }
