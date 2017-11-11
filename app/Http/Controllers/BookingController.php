@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Mail\Mailer;
 
 use App\Booking;
+use App\Train;
     use DB;
     use Auth;
 
@@ -44,5 +45,22 @@ class BookingController extends Controller
 
         return ("Booking save into database and email has been sent to you");
     }
-    
+
+   public function ajax(Request $request){
+
+    $bookingDate = $request->input("date");
+    $slot = $request->input("slot");
+    $train = Train::select('spaceLeft')->where('trainDate',$bookingDate)->first();
+
+    if ($train != null){
+    $spaceLeft = $train->spaceLeft;     
+        if ($slot < $spaceLeft){
+          return response()->json(['response' => 'yes']);
+        }else{
+          return response()->json(['response' => 'no']);  
+     }
+        }else{
+          return response()->json(['response' => 'not available']); 
+     }
+}
 }

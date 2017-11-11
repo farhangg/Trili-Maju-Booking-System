@@ -134,9 +134,16 @@
                          <div style='padding-bottom: 50px;'>
                             <label class="col-md-4 control-label">Train Date</label>
                             <div class="col-md-6">
-                                 <input type="date" name="ChosenDate">
-                                <button value="checkAvailability">Check Availability </button>
+                                 <input onchange="ajaxCheckAvailability()" type="date" id="ChosenDate" name="ChosenDate">
+                                <button type="button" value="checkAvailability">Check Availability</button>
                             </div>
+                        </div>
+
+                        <div style='padding-bottom: 50px;' id="dateAvailability">
+                        <label class="col-md-4 control-label"></label>
+                        <div id='slotAvailabilityMessage' class="col-md-6" style="visibility: hidden">
+                              <p id='slotMsg' style="color:green">Train is available. Please proceed!</p>  
+                        </div>
                         </div>
 
                         <div style='padding-bottom: 50px;'>
@@ -196,12 +203,39 @@
     console.log(c20 + '= 20-Container');
      console.log(c40 + '= 40-Container');
 
-
+     document.getElementById('ChosenDate').value = '';
      var s = document.getElementById("total");
             s.value = c20 + c40;
 }
 
-   
+function ajaxCheckAvailability(){
+        var bookingDate = $('#ChosenDate').val();
+        var total = $('#total').val();
+         console.log($('#ChosenDate').val());
+        $.ajax({
+            type: "GET",
+            url:'/booking/checkAvailability',
+            dataType: 'json', 
+            data: {date: bookingDate,slot: total},
+            success: function( data ) {
+                $("#ajaxResponse").append("<div>"+data+"</div>");
+                console.log(data.response);
+                var x = document.getElementById('slotAvailabilityMessage');
+
+                if (data.response == 'yes'){
+                    $("#slotMsg").text("Train is available, you may proceed!");
+                    document.getElementById("slotMsg").style.color = "green";
+                    x.style.visibility = 'visible';
+                }else{
+                    document.getElementById("slotMsg").style.color = "red";
+                    $("#slotMsg").text("Sorry, please find another slot");
+                    x.style.visibility = 'visible';
+                }
+                
+            }
+        });
+    
+}
 </script>
 
 @endsection
