@@ -198,7 +198,6 @@
     </div>
 </div>
 </div>
-
 <script>
     function totalContainer() {
         var c20 = document.getElementById("Container20").value * 20;
@@ -238,11 +237,10 @@
 
             }
         });
-
     }
 </script>
-<script src="{{ asset('vendors/base/vendors.bundle.js') }}" type="text/javascript"></script>
-<script src="{{ asset('demo/default/base/scripts.bundle.js') }}" type="text/javascript"></script>
+<script src="vendors/base/vendors.bundle.js" type="text/javascript"></script>
+<script src="demo/demo2/base/scripts.bundle.js" type="text/javascript"></script>
 <script src="{{ asset('demo/default/custom/components/forms/widgets/bootstrap-datepicker.js') }}" type="text/javascript"></script>
 <script src="{{ asset('demo/default/custom/components/forms/widgets/bootstrap-timepicker.js') }}" type="text/javascript"></script>
 @endsection

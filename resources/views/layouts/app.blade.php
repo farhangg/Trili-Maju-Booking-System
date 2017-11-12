@@ -43,7 +43,7 @@
                             <div class="m-stack m-stack--ver m-stack--general m-stack--inline">
                                 <div class="m-stack__item m-stack__item--middle m-brand__logo">
                                     <a href="index.html" class="m-brand__logo-wrapper">
-                                        <img alt="" src="assets/demo/demo2/media/img/logo/logo.png" />
+                                        <img alt="" src="app/media/img/logos/trili-logo.png" height="51" width="100" />
                                     </a>
                                 </div>
                                 <div class="m-stack__item m-stack__item--middle m-brand__tools">
@@ -141,7 +141,7 @@
                                         <li class="m-nav__item m-topbar__user-profile m-topbar__user-profile--img  m-dropdown m-dropdown--medium m-dropdown--arrow m-dropdown--header-bg-fill m-dropdown--align-right m-dropdown--mobile-full-width m-dropdown--skin-light" data-dropdown-toggle="click">
                                             <a href="#" class="m-nav__link m-dropdown__toggle">
                                                 <span class="m-topbar__userpic m--hide">
-                                                    <img src="assets/app/media/img/users/user4.jpg" class="m--img-rounded m--marginless m--img-centered" alt="" />
+                                                    <img src="app/media/img/users/100_13.jpg" class="m--img-rounded m--marginless m--img-centered" alt="" />
                                                 </span>
                                                 <span class="m-topbar__welcome">
                                                     Hello,&nbsp;
@@ -352,8 +352,8 @@
                     <div class="m-content">
                         <!--begin:: Widgets/Stats-->
                         <div class="m-portlet ">
-                            <div class="m-portlet__body  m-portlet__body--no-padding">
-                                <div class="row m-row--no-padding m-row--col-separator-xl">
+                            <div class="m-portlet__body  m-portlet__body">
+                                <div class="row m-row m-row--col-separator-xl">
                                     <div class="col-md-12">
                                         <!--begin::Total Profit-->
                                         <div class="m-widget24">
@@ -431,7 +431,6 @@
         <!-- end::Footer -->
     </div>
     <!-- end:: Page -->
-    <!--begin::Base Scripts -->
     <script src="vendors/base/vendors.bundle.js" type="text/javascript"></script>
     <script src="demo/demo2/base/scripts.bundle.js" type="text/javascript"></script>
     <!--end::Base Scripts -->
@@ -441,7 +440,6 @@
     <!--begin::Page Snippets -->
     <script src="app/js/dashboard.js" type="text/javascript"></script>
     <!--end::Page Snippets -->
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <!-- Scripts -->  
 </body>
 </html>
